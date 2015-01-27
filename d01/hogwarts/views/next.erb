@@ -1,0 +1,17 @@
+<html>
+<body>
+    <a href="/students">run home</a>
+  <p>
+    <%= thiswiz[:name] %> is <%= thiswiz[:age] %> years old. fav spell is <%= thiswiz[:spell] %>.
+  </p>
+
+  <p>
+    <%= thiswiz[:name] %> can be put expelled here:
+  </p>
+  <form action="/students/<%= thiswiz[:id] %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>ABRACADABRA!!</button>
+  </form>
+
+</body>
+</html>

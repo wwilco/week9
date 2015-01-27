@@ -1,0 +1,7 @@
+
+
+get '/dwarves' shows something 
+get '/dwarf/:id'
+put '/dwarf/:id' updates something
+post'/dwarf/:id'
+delete '/dwarf/:id'

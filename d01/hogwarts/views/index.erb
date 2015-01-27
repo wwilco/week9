@@ -1,0 +1,17 @@
+<html>
+<body>
+  <ul>
+    <% students.each do |key, student| %>
+    <li><%= student[:name] %> is <%= student[:age] %> years old. His fav speill <%= student[:spell] %>.</li>
+    <% end %>
+  </ul>
+
+  <h3>Add student here:</h3>
+  <form action='/student' method='post'>
+    <input type="text" name="name" placeholder="wizard name" required>
+    <input type="text" name="age" placeholder="their age" required>
+    <input type="text" name="spell" placeholder="favorite spell" required>
+    <button>ADD XOXO</button>
+  </form>
+</body>
+</html>
