@@ -1,0 +1,41 @@
++ What is the difference between an API and a server?
+An API is utilized in web applications so that whatever library is being used,
+it’s specifications can be implemented on that web app.
+When a client makes a request to utilize the API via the web app,
+a request is first made to the web app’s server,
+then that server makes a request to that API’s own server.
+Different from a server, when a client uses a web app,
+there requests are sent to a server, and the server responds back.
+
++ What does a DNS server do when you type "www.google.com" into an address bar?
+The url is sent to the internet service provider where they redirect
+the client to google.com’s server. This server then sends the page back to the ISP,
+then the ISP sends the page back to the client.
+BUT before google.com appears on the browsers,
+each piece of the website is sent individual.
+First the bare bones html file is collected, this is just text and basic formatting.
+Then any other supporting files are collected, like scripts, css, hyperlinks, or images.
+
++ What are some differences between a single page application and a multipage  application? List one example of each.
+An SPA is able to refresh specific elements of a page without effecting others.
+Gmail, does not reload the sidebar every time you refresh the page,
+however if you do have new mail, the sidebar will have an unread messages alert.
+The messages section where you can read your mail does refresh every time you reload the page though.
+A MPA must refresh its entire page if any new content is to be shown.
+CNN.com updates often, however if you did not access a hyper link or refresh the page, it would remain as it was when you first loaded the page.
+
++ Why do we use RESTful routes?
+Used to create alternative paths and routes in URLs,
+and helps avoid long strings in the url address.
+Besides efficiency, they can also perform commands.
+DELETE will remove elements from a page, POST will create,
+PUT will edit/update and GET will retrieve.
+
++ What is an API key and why are they used?
+An API key is a string of code that must be implemented within
+your server or AJAX to access and implement an API library.
+When you use an API, lets say instagram, you are accessing
+their information from their servers. To be able to do this,
+you need a passcode that lets you enter.
+This enables instagram to track what you do with their API
+and make sure it is not used to implement world domination.
