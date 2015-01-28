@@ -85,11 +85,27 @@ var books = {
 }
 
 app.get('/books', function(req, res){
-  res.json(books);
+  res.send('index.ejs', {books: });
 });
 
-app.post('/book', function(req, res){
-  
-})
+app.post('/create', function(req, res){
+  var bookNum = Object.keys(bookObj);
+  var counter = bookNum.length;
+  counter++;
+
+  newBook = {
+    id: counter,
+    title: req.body.book,
+    author: req.body.author,
+    isbn13: req.body.isbn,
+    description: req.body.descrip
+  }
+
+  bookObj[counter] = newBook;
+  console.log(newBook);
+
+  res.redirect('/books');
+
+});
 
 app.listen(3000);

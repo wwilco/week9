@@ -1,0 +1,37 @@
+
+sqlite3 tablefun.db
+CREATE TABLE schools (ID INTEGER PRIMARY KEY, name TEXT, city TEXT, state TEXT, zip INT);
+
+sqlite> SELECT * FROM schools;
+1|UCLA|Los Angeles|CA|9876
+2|NYU|New York|NY|2276
+3|NYCC|White Plains|NY|10202
+
+UPDATE schools SET name="Manhattan High";
+
+1|Manhattan High|Los Angeles|CA|9876
+2|Manhattan High|New York|NY|2276
+3|Manhattan High|White Plains|NY|10202
+
+PRAGMA table_info(schools);
+0|ID|INTEGER|0||1
+1|name|TEXT|0||0
+2|city|TEXT|0||0
+3|state|TEXT|0||0
+4|zip|INT|0||0
+
+
+1|Gertrud|ck@gmail.com|humor|47
+2|Louis CK|ck@gmail.com|humor|47
+3|maria|maria@gmail.com|math|42
+4|baby larry|baby@gmail.com|math|2
+
+sqlite> UPDATE teachers SET age=40;
+sqlite> SELECT * FROM teachers;
+1|Gertrud|ck@gmail.com|humor|40
+2|Louis CK|ck@gmail.com|humor|40
+3|maria|maria@gmail.com|math|40
+4|baby larry|baby@gmail.com|math|40
+
+
+CREATE TABLE teachers (ID INTEGER PRIMARY KEY, name TEXT, email TEXT, subject TEXT, age INT);
