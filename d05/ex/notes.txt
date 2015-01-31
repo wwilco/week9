@@ -1,0 +1,73 @@
+SELECT * FROM persons CROSS JOIN cities;
+1|Jim Bob|1|1|Detroit
+1|Jim Bob|1|2|Seattle
+1|Jim Bob|1|3|NewYorkCity
+1|Jim Bob|1|4|Boston
+2|Horseshoe Steve|1|1|Detroit
+2|Horseshoe Steve|1|2|Seattle
+2|Horseshoe Steve|1|3|NewYorkCity
+2|Horseshoe Steve|1|4|Boston
+3|Carolyn Nairne|2|1|Detroit
+3|Carolyn Nairne|2|2|Seattle
+3|Carolyn Nairne|2|3|NewYorkCity
+3|Carolyn Nairne|2|4|Boston
+4|Cowboy Roy|2|1|Detroit
+4|Cowboy Roy|2|2|Seattle
+4|Cowboy Roy|2|3|NewYorkCity
+4|Cowboy Roy|2|4|Boston
+5|Sassy Sue|2|1|Detroit
+5|Sassy Sue|2|2|Seattle
+5|Sassy Sue|2|3|NewYorkCity
+5|Sassy Sue|2|4|Boston
+6|Nice Ned||1|Detroit
+6|Nice Ned||2|Seattle
+6|Nice Ned||3|NewYorkCity
+6|Nice Ned||4|Boston
+7|Frank Frank|2|1|Detroit
+7|Frank Frank|2|2|Seattle
+7|Frank Frank|2|3|NewYorkCity
+7|Frank Frank|2|4|Boston
+8|Evil Michelle||1|Detroit
+8|Evil Michelle||2|Seattle
+8|Evil Michelle||3|NewYorkCity
+8|Evil Michelle||4|Boston
+9|Laura Story|2|1|Detroit
+9|Laura Story|2|2|Seattle
+9|Laura Story|2|3|NewYorkCity
+9|Laura Story|2|4|Boston
+10|Sarah Patterson|3|1|Detroit
+10|Sarah Patterson|3|2|Seattle
+10|Sarah Patterson|3|3|NewYorkCity
+10|Sarah Patterson|3|4|Boston
+11|Erica Badu|4|1|Detroit
+11|Erica Badu|4|2|Seattle
+11|Erica Badu|4|3|NewYorkCity
+11|Erica Badu|4|4|Boston
+
+SELECT persons.name, cities.name FROM persons INNER JOIN cities ON persons.city_id = cities.id;
+  everything has to match after inner join
+
+Jim Bob|Detroit
+Horseshoe Steve|Detroit
+Carolyn Nairne|Seattle
+Cowboy Roy|Seattle
+Sassy Sue|Seattle
+Frank Frank|Seattle
+Laura Story|Seattle
+Sarah Patterson|NewYorkCity
+Erica Badu|Boston
+
+SELECT persons.name, cities.name FROM persons LEFT OUTER JOIN cities ON persons.city_id = cities.id;
+  
+
+Jim Bob|Detroit
+Horseshoe Steve|Detroit
+Carolyn Nairne|Seattle
+Cowboy Roy|Seattle
+Sassy Sue|Seattle
+Nice Ned|
+Frank Frank|Seattle
+Evil Michelle|
+Laura Story|Seattle
+Sarah Patterson|NewYorkCity
+Erica Badu|Boston
