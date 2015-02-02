@@ -19,46 +19,17 @@ get("/artists") do
   erb(:"artists/index", { locals: { artists: Artists.all() } })
 end
 
-get("/artists/:id") do
-  artist = Artists.find_by({id: params[:id]})
-  erb(:"artists/show", { locals: { artist: artist } })
-end
-
-get("/artists/new") do
-  erb(:"artists/new", { locals: { artists: Artists.all(), } })
-end
-
 post("/artist") do
-  artist_hash = {
-    name: params["name"],
-  }
-
-  Artists.create(artist_hash)
-
-  erb(:"artists/index", { locals: { artists: Artists.all() } })
+  artist = {
+    name: params["name"]
+  };
+  Artists.create(artist)
+  erb :"artists/index", locals: { artists: Artists.all() }
 end
 
-get("/artists/:id/edit") do
+get("/artist/:id") do
   artist = Artists.find_by({id: params[:id]})
-  erb(:"artists/edit", { locals: { artist: artist, artists: Artists.all() } })
-end
-
-put("/artists/:id") do
-  artist_hash = {
-    name: params["name"],
-  }
-
-  artist = Artists.find_by({id: params[:id]})
-  artist.update(artist_hash)
-
-  erb(:"artists/show", { locals: { artist: artist } })
-end
-
-delete("/artists/:id") do
-  artist = Artists.find_by({id: params[:id]})
-  artist.destroy
-
-  redirect "/artists"
+  erb :"artists/show", locals: {artist: artist}
 end
 
 
